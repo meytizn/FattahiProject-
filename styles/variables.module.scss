@@ -1,0 +1,33 @@
+
+// @import 'mixins';
+
+
+
+$primary-color: #030162;
+
+.title{
+    background-color:$primary-color;
+    color: white;
+    border-color: white;
+
+    a{color: $primary-color;text-align: center;}
+}
+
+
+
+
+// @include mobile(){
+//     .title{
+//         color: $primary-color;
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
