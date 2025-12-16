@@ -5,7 +5,6 @@ export interface wordInterfaceSlice {
     id: number;
     title: string; 
     status:boolean;
-    img:string ; 
     imganswer:string;
     sound:string;
     description:string;
@@ -14,10 +13,10 @@ export interface wordInterfaceSlice {
 
 // Define the initial state as an array of CartProduct
 const initialState: wordInterfaceSlice[] = [
-        { id: 1, title: "pizza",status:false,img:'/icons/qrcode.png',imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3',  description: "the food that italians eat" },
-        { id: 2, title: "Fish",status:false,img:'/icons/qrcode.png' ,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3', description: "the animal can swim in ocean" },  
-        { id: 3, title: "lasagna",status:false,img:'/icons/qrcode.png' ,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3' ,   description: "Layered pasta with meat and cheese." },
-        { id: 4, title: "pasta",status:false,img:'/icons/qrcode.png' ,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3', description: "pasta beef burger with toppings." },
+        { id: 1, title: "pizza",status:false,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3',  description: "the food that italians eat" },
+        { id: 2, title: "Fish",status:false,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3', description: "the animal can swim in ocean" },  
+        { id: 3, title: "lasagna",status:false,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3' ,   description: "Layered pasta with meat and cheese." },
+        { id: 4, title: "pasta",status:false,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3', description: "pasta beef burger with toppings." },
     ];
 
 // Create the cart slice

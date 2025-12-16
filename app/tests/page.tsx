@@ -26,7 +26,7 @@ const Page = () => {
             {questions.map((item) => (
                 <div className='w-[45%] md:w-[20%] h-[200px]  flex flex-col justify-center items-center content-center' key={item.id}>
                      <Link href={`/tests/${item.id}`}>
-                    <img src={item.img} className='w-[150px]' />
+                    <img src='/icons/qrcode.png' className='w-[150px]' />
                     {/* <span>{item.title}</span> */}
                   </Link> 
                 </div>

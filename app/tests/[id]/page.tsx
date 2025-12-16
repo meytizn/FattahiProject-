@@ -80,7 +80,7 @@ const DetailView = () => {
                 
                 
                 <div className='flex md:w-[30%] gap-5 md:gap-10 flex-col md:rounded-md justify-center items-center p-5 border-2 '>
-                <img className='w-[200px] md:w-[200px] pt-3' src={imgShower ? question.imganswer : question.img}/>
+                <img className='w-[200px] md:w-[200px] pt-3' src={imgShower ? question.imganswer : "/icons/qrcode.png"}/>
                 
                 {/* <h1 className='text-2xl font-bold'>{question.title}</h1> */}
 
