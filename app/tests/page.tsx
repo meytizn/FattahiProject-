@@ -23,7 +23,7 @@ const Page = () => {
     return (
         <>
         <div className='flex flex-row justify-around gap-y-2 flex-wrap  p-3'>
-            {questions.map((item) => (
+            {questions.slice(0, 4).map((item) => (
                 <div className='w-[45%] md:w-[20%] h-[200px]  flex flex-col justify-center items-center content-center' key={item.id}>
                      <Link href={`/tests/${item.id}`}>
                     <img src='/icons/qrcode.png' className='w-[150px]' />
