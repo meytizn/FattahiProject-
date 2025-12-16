@@ -7,16 +7,17 @@ export interface wordInterfaceSlice {
     status:boolean;
     img:string ; 
     imganswer:string;
+    sound:string;
     description:string;
    
 }
 
 // Define the initial state as an array of CartProduct
 const initialState: wordInterfaceSlice[] = [
-        { id: 1, title: "pizza",status:false,img:'icons/qrcode.png',imganswer:'icons/qrgreen.png' ,  description: "Delicious cheese and tomato pizza." },
-        { id: 2, title: "lasagna",status:false,img:'icons/qrcode.png' ,imganswer:'icons/qrgreen.png' ,  description: "Layered pasta with meat and cheese." },
-        { id: 3, title: "pasta",status:false,img:'icons/qrcode.png' ,imganswer:'icons/qrgreen.png' ,  description: "pasta beef burger with toppings." },
-        { id: 4, title: "Fish",status:false,img:'icons/qrcode.png' ,imganswer:'icons/qrgreen.png' ,  description: "Fresh fish cooked to perfection." },  
+        { id: 1, title: "pizza",status:false,img:'/icons/qrcode.png',imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3',  description: "the food that italians eat" },
+        { id: 2, title: "Fish",status:false,img:'/icons/qrcode.png' ,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3', description: "the animal can swim in ocean" },  
+        { id: 3, title: "lasagna",status:false,img:'/icons/qrcode.png' ,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3' ,   description: "Layered pasta with meat and cheese." },
+        { id: 4, title: "pasta",status:false,img:'/icons/qrcode.png' ,imganswer:'/images/vedavski1.jpg' , sound:'/audios/correct.mp3', description: "pasta beef burger with toppings." },
     ];
 
 // Create the cart slice

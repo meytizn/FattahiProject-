@@ -32,6 +32,7 @@ const counterSlice = createSlice({
         // Action to reset the counter
         reset: () => {
             localStorage.removeItem("counter"); // Remove from local storage
+            window.history.back()
             return 0; // Reset to initial state
         },
     },

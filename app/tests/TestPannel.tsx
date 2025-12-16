@@ -22,7 +22,7 @@ const TestPannel = () => {
             </button>
 
 
-          <button onClick={() => alert(counter)}
+          <button 
            className='w-[30%] p-2 bg-blue-500 text-white rounded'>
                 Score :    {counter}
             </button>
