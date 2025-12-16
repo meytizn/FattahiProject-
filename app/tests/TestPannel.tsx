@@ -10,25 +10,26 @@ const TestPannel = () => {
         const {increment,decrement,reset} = counterSlice.actions
   return (
  
-      <div className='shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.8)] w-full fixed bottom-0 h-[50px] flex flex-row justify-evenly 
-      bg-[#010044]
+      <div className='
+       w-full fixed bottom-0 h-[58px] border-t-2 shadow-2xl  flex flex-row justify-between 
+       bg-white border-5 pt-1 border-white
       '>
         
 
 
                      <button onClick={() => dispatch(reset())}
-           className=' w-[30%] p-2 bg-blue-500 text-white rounded'>
+           className=' w-[30%] p-2  bg-[#030162] text-white rounded'>
                 reset
             </button>
 
 
           <button 
-           className='w-[30%] p-2 bg-blue-500 text-white rounded'>
-                Score :    {counter}
+           className='w-[30%] p-2 bg-[#030162] text-white  rounded'>
+                Score   :    {counter}
             </button>
 
 
-        <button onClick={() => window.history.back()} className='w-[30%] p-2 bg-blue-500 text-white rounded'>
+        <button onClick={() => window.history.back()} className='w-[30%] p-2 bg-[#030162] text-white rounded'>
                 Go Back
             </button>
       </div>
