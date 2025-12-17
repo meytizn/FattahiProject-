@@ -15,6 +15,7 @@ const Page = () => {
     const currentpage = parseInt(searchParams.get('page') || '1'); // Get page from searchParams
     const firstIndex = (currentpage - 1) * ppg;
     const endIndex = firstIndex + ppg;
+    const counterAllPages = Math.ceil(questions.length / ppg)
 
     const questionPagination = questions.slice(firstIndex, endIndex);
 
@@ -35,11 +36,37 @@ const Page = () => {
             ))}
         </div>
             
-        <div className='fixed bottom-20 flex flex-row justify-evenly w-[100%] text-white justify-between'>
-            <Link className='btn w-[30%] p-3 text-white text-center bg-white rounded-b-md' href={`?page=${currentpage + 1}`}>Next</Link>
-            <Link className='btn w-[30%] p-3 text-white text-center bg-white rounded-b-md' href={`?page=${currentpage - 1}`}>Previous</Link>
-        </div>
+
+
+            {/* pagination buttons  */}
         
+
+<div className='fixed bottom-20 flex flex-row justify-evenly w-[100%] text-white justify-between'>
+    
+    <Link 
+        className={`${currentpage > 1 ? '' : 'pointer-events-none text-gray-400'} btn w-[30%] p-3 text-white text-center bg-white rounded-b-md`} 
+        href={currentpage > 1 ? `?page=${currentpage - 1}` : '#'}
+    >
+        Previous
+    </Link>
+
+    {/* Circle div with shadow */}
+    <div className={`${currentpage == 1 ? 'right-0' : ''} absolute left-1/2 transform -translate-x-1/2 w-[60px] h-[60px] bg-white border-5 text-[#030162] rounded-full shadow-lg flex items-center justify-center`}>
+        <span className='text-[20px] text-[#030162]'>{currentpage}</span>
+    </div>
+
+    <Link 
+        className={`${currentpage < counterAllPages ? '' : 'pointer-events-none text-gray-400'} btn w-[30%] p-3 text-white text-center bg-white rounded-b-md`} 
+        href={currentpage < counterAllPages ? `?page=${currentpage + 1}` : '#'}
+    >
+        Next
+    </Link>
+    
+</div>
+
+
+
+
         <TestPannel/>
         </>
     );
