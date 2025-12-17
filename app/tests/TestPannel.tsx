@@ -19,10 +19,16 @@ const TestPannel = () => {
         }
     }, [counter, router]); // Dependency array
 
+
+        const restartHandler=()=>{
+            dispatch(reset())
+            router.push('/tests');
+        }
+
     return (
         <div className='w-full fixed bottom-0 h-[58px] border-t-2 shadow-2xl flex flex-row justify-between bg-white border-5 pt-1 border-white'>
-            <button onClick={() => dispatch(reset())} className='w-[30%] p-2 bg-[#030162] text-white rounded'>
-                Reset
+            <button onClick={restartHandler} className='w-[30%] p-2 bg-[#030162] text-white rounded'>
+                Restart
             </button>
 
             <button className='w-[30%] p-2 bg-[#030162] text-white rounded'>

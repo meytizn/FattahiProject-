@@ -75,7 +75,7 @@ const DetailView = () => {
     return (
         <>
 
-            <div className='flex flex-col md:flex-row md:w-[90%] m-auto justify-start md:p-3 md:gap-x-15 mb-[500px]  '>
+            <div className='md:mt-10 flex flex-col md:flex-row md:w-[90%] m-auto justify-start md:p-3 md:gap-x-15 mb-[500px]  '>
                 
                 
                 
@@ -170,7 +170,7 @@ const DetailView = () => {
                             ${message !== ""  ? 'bg-green-600 text-white ':'bg-gray-400 cursor-not-allowed'} 
                             focus:outline-none `}
                     >
-                        <Link className='text-white' href={`/tests/${question.id+1}`}> 
+                        <Link className='text-white' href={`/tests/${question.id < questions.length ? question.id + 1 : 1}`}> 
                         continue</Link>
                     </button>
 
