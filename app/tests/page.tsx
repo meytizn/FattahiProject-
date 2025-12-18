@@ -26,6 +26,7 @@ const Page = () => {
                 <div className='sticky w-[35%] md:w-[30%] h-[200px] flex flex-col justify-center items-center content-center' key={item.id}>
                     <Link href={`/tests/${item.id}`}>
                         <img src='/icons/qrcode.png' className='w-[150px]' />
+                        
                     </Link> 
                     
                     {/* Circle div with shadow */}

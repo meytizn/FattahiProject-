@@ -8,6 +8,7 @@ import counterSlice from '@/redux/counterSlice';
 import TestPannel from '../TestPannel';
 import { wordInterfaceSlice } from '@/redux/wordSlice';
 import Link from 'next/link';
+import QrButton from '../QrButton';
 
 const DetailView = () => {
     const { id } = useParams(); // Get the dynamic route parameter
@@ -80,8 +81,13 @@ const DetailView = () => {
                 
                 
                 <div className='flex md:w-[30%] gap-5 md:gap-10 flex-col md:rounded-md justify-center items-center p-5 border-2 '>
-                <img className='w-[200px] md:w-[200px] pt-3' src={imgShower ? question.imganswer : "/icons/qrcode.png"}/>
                 
+                {imgShower ? (<img className='w-[200px] md:w-[200px] pt-3' src={question.imganswer }/>)
+                :(<QrButton/>)}
+                
+
+
+
                 {/* <h1 className='text-2xl font-bold'>{question.title}</h1> */}
 
                 
@@ -120,6 +126,8 @@ const DetailView = () => {
                         className="w-[100%] text-lg text-center flex-1 text-black p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Type your answer..."
                     />
+
+
 
 
 
