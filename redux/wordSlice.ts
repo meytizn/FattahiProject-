@@ -13,7 +13,7 @@ export interface wordInterfaceSlice {
 
 // Define the initial state as an array of CartProduct
 const initialState: wordInterfaceSlice[] = [
-  { id: 1, title: "Pizza", status: false, imganswer: "/images/vedavski1.jpg", sound: "/audios/correct.mp3", description: "a famous Italian food with cheese" },
+  { id: 1, title: "Pizza", status: false, imganswer: "/images/pizza.jpg", sound: "/audios/pizza.mp3", description: "a famous Italian food with cheese" },
   { id: 2, title: "Fish", status: false, imganswer: "/images/vedavski1.jpg", sound: "/audios/correct.mp3", description: "an animal that lives in water" },
   { id: 3, title: "Apple", status: false, imganswer: "/images/vedavski1.jpg", sound: "/audios/correct.mp3", description: "a red or green fruit" },
   { id: 4, title: "Dog", status: false, imganswer: "/images/vedavski1.jpg", sound: "/audios/correct.mp3", description: "a loyal animal that barks" },

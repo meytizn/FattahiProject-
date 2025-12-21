@@ -13,8 +13,11 @@ import QrButton from '../QrButton';
 const DetailView = () => {
     const { id } = useParams(); // Get the dynamic route parameter
     const [answer, setAnswer] = useState("");
+    const [finalAnswer, setFinalAnswer] = useState(false);
+
     const [message, setMessage] = useState("");
     const [hint, setHint] = useState(false);
+    const [answerColor, setAnswerColor] = useState("");
     
     
 
@@ -31,12 +34,15 @@ const DetailView = () => {
     };
 
     // wordSlice
+
     const questions = useSelector((state: RootState) => state.words);
 
     const question = questions.find(q => q.id === Number(id));
 
     const [imgShower, setImgShower] = useState(false);
+
     // counterSlice
+
     const counter = useSelector((state: RootState) => state.counters);
     const dispatch = useDispatch<AppDispatch>();
     const { increment, decrement } = counterSlice.actions;
@@ -47,18 +53,24 @@ const DetailView = () => {
             
 
         setImgShower(true)
+        setFinalAnswer(true)
+
         if (answer.toLowerCase() === question?.title.toLowerCase()) {
             // alert("Correct");
             playAudio("/audios/correct.mp3"); // Play correct answer audio
             
-            setMessage(`${answer} is correct`)
+            setMessage(` correct`)
+            setAnswerColor('bg-green-800')
             dispatch(increment(10));
         } else {
             // alert('Wrong');
             playAudio("/audios/wrong.wav"); // Play wrong answer audio
-            setMessage(`wrong answer! the answer is ${question?.title}`);
+            setMessage(`wrong answer !`);
+            
+            setAnswerColor('bg-red-800')
             dispatch(decrement(10));
         }
+
 
 
         }
@@ -66,6 +78,11 @@ const DetailView = () => {
     };
 
 
+
+    const hitHandler =()=>{
+        setHint(!hint)
+        // setAnswerColor("bg-yellow-820")
+    }
 
 
 
@@ -80,9 +97,9 @@ const DetailView = () => {
                 
                 
                 
-                <div className='flex md:w-[30%] gap-5 md:gap-10 flex-col md:rounded-md justify-center items-center p-5 border-2 '>
+                <div className={`${answerColor} flex md:w-[30%] gap-5 md:gap-10 flex-col md:rounded-md justify-center items-center p-5 border-2 `}>
                 
-                {imgShower ? (<img className='w-[200px] md:w-[200px] pt-3' src={question.imganswer }/>)
+                {imgShower ? (<img className='w-[200px] md:w-[200px] pt-3 rounded-md ' src={question.imganswer }/>)
                 :(<QrButton/>)}
                 
 
@@ -104,8 +121,13 @@ const DetailView = () => {
                     <img className='w-[50px] m-auto ' src='/icons/soundwhite.png' />
                  </button>
 
+
+                {finalAnswer && (<h3 className='bg-white w-full mt-5 text-lg text-center text-black text-[25px] font-bold'>{question?.title}</h3> 
+)}
+
+
                                  {hint && 
-                <h3 className='w-[100%] pt-8 text-lg text-yellow-300 text-[22px]'>{question.description}</h3> }
+                <h3 className='w-full   text-lg bg-yellow-300 mt-3 text-left p-2 text-black text-lg'>{question.description}</h3> }
 </div>
 
 
@@ -117,7 +139,7 @@ const DetailView = () => {
 
                 <div className="md:w-[30%]   flex md:my-[0px] flex-col gap-5 items-center p-4 bg-gray-100 md:rounded-md shadow-md">
                    
-                   <p className='text-black text-[20px]'>{message}</p>
+                   <p className={`text-white text-[20px] w-full p-2 rounded-md text-center  ${answerColor}`}>{message}</p>
                    
                     <input 
                         type="text" 
@@ -139,7 +161,7 @@ const DetailView = () => {
                     <button 
                         type='submit' 
                          disabled={message !== ""} // Button is disabled if there is a message
-                        onClick={() => setHint(!hint)}
+                        onClick={hitHandler}
                         className={`px-4 py-2 text-white rounded-md
                             ${message !== "" ? 'bg-gray-400 cursor-not-allowed hidden' : ' cursor '} 
                             focus:outline-none  focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 cursor-pointer `}
