@@ -43,6 +43,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
+    <head>
+      <meta name="theme-color" content="#030162"/>
+    </head>
+
       <body
         className={`${vazirFont.className} ${variables.title}`}
       >
