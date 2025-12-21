@@ -15,7 +15,7 @@ const QrButton = () => {
   return (
     <div style={{ textAlign: "center", marginTop: "2rem" }}>
       <QRCodeCanvas value={url} size={200} />
-      <p style={{ marginTop: "10px" }}>{url}</p>
+      {/* <p style={{ marginTop: "10px" }}>{url}</p> */}
     </div>
   );
 };
