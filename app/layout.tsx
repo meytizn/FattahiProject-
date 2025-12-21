@@ -33,6 +33,7 @@ const vazirFont=localFont({
 export const metadata: Metadata = {
   title: "Hossein Fattahi thesis",
   description: "HosseinFatahi",
+  themeColor:"#030162",
 };
 
 export default function RootLayout({
