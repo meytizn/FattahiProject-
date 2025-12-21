@@ -15,9 +15,9 @@ const Page = () => { // Change the component name to start with an uppercase let
          router.push('/tests');
     }
     return (
-        <div className='w-full text-[45px] h-[80vh] bg-red-500  flex flex-col gap-30 items-center content-center justify-items-center  justify-center '>
+        <div className='w-full text-2xl text-center h-[80vh] bg-red-500  flex flex-col gap-30 items-center content-center justify-items-center  justify-center '>
             <h1>you lose the game</h1>
-            <button onClick={resetHandler} className='w-[30%] p-2 bg-[#030162] text-white rounded  cursor-pointer border-2 border-white shadow-2xs'>
+            <button onClick={resetHandler} className='w-[70%] p-2 bg-[#030162] text-white rounded  cursor-pointer border-2 border-white shadow-2xs'>
                 Restart
             </button>
         </div>

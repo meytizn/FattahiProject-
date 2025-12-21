@@ -31,7 +31,7 @@ const vazirFont=localFont({
 
 
 export const metadata: Metadata = {
-  title: "HosseinFatahi",
+  title: "Hossein Fattahi thesis",
   description: "HosseinFatahi",
 };
 
