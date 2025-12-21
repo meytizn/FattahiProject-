@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { useSearchParams } from 'next/navigation'; // Import the hook
 import { RootState } from '@/redux/store'; // Adjust the path accordingly
 import TestPannel from './TestPannel';
+import variables from '../../styles/variables.module.scss'
 
 const Page = () => {
     const questions = useSelector((state: RootState) => state.words); 
@@ -45,7 +46,7 @@ const Page = () => {
 <div className='fixed bottom-20 flex flex-row justify-evenly w-[100%] text-white justify-between'>
     
     <Link 
-        className={`${currentpage > 1 ? '' : 'pointer-events-none text-gray-400'} btn w-[30%] p-3 text-white text-center bg-white rounded-b-md`} 
+        className={`${currentpage <= 1 ? variables.deactive : ""} btn w-[30%] p-3 text-white text-center bg-white rounded-b-md`} 
         href={currentpage > 1 ? `?page=${currentpage - 1}` : '#'}
     >
         Previous
@@ -57,7 +58,7 @@ const Page = () => {
     </div>
 
     <Link 
-        className={`${currentpage < counterAllPages ? '' : 'pointer-events-none text-gray-400'} btn w-[30%] p-3 text-white text-center bg-white rounded-b-md`} 
+        className={`${currentpage >= counterAllPages ? variables.deactive : ''} btn w-[30%] p-3 text-white text-center bg-white rounded-b-md`} 
         href={currentpage < counterAllPages ? `?page=${currentpage + 1}` : '#'}
     >
         Next
